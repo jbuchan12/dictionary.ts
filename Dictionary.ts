@@ -122,6 +122,15 @@ export module DictionaryTs{
             return this.elements.filter(predicate);
         }
 
+        /**
+         * Select the element of the array that your require
+         * @param selection 
+         */
+        select<ToutPut>(selection: (element: IKeyValuePair<TKey, TValue>, 
+            index: number) => ToutPut) : ToutPut[]{
+            return this.elements.map(selection);
+        }
+
         /** 
         * Returns the first element in the collection which matches the predicate
         */
