@@ -83,6 +83,17 @@ export module DictionaryTs{
             return this.where(predicate).length > 0;
         }
 
+        /**
+         * Checks to see if all elements match the predicate
+         * @param predicate 
+         */
+        all(predicate?: (value?: IKeyValuePair<TKey, TValue>,
+            index?: number,
+            list?: IKeyValuePair<TKey, TValue>[]) => boolean): boolean {
+            //Make sure the length of items returned matches those returned by the filter
+            return this.where(predicate).length === this.elements.length;
+        }
+
         /** 
          * How many elements in the collection
         */
