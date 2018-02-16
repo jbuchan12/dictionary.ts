@@ -50,7 +50,12 @@ export module DictionaryTs{
          * @param element 
          */
         remove(element : IKeyValuePair<TKey,TValue>) : void{
-            throw "NotImplementedException";
+            
+            //If the keys match remove at index
+            for(let i = 0; i < this.elements.length; i++){
+                if(this.elements[i].key === element.key) 
+                    this.removeAt(i);
+            }
         }
 
         /**
@@ -58,7 +63,9 @@ export module DictionaryTs{
          * @param i 
          */
         removeAt(i : number) : void{
-            throw "NotImplementedException";
+            
+            //Remove the element from the array at index provided
+            this.elements.splice(i,1);
         }
 
         //#endregion
