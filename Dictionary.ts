@@ -19,7 +19,7 @@ export module DictionaryTs{
         /**
          * Main data storage for the class
          */
-        private readonly elements : IKeyValuePair<TKey,TValue>[] = []
+        private elements : IKeyValuePair<TKey,TValue>[] = [];
 
         /**
          * Default Constructor
@@ -66,6 +66,13 @@ export module DictionaryTs{
             
             //Remove the element from the array at index provided
             this.elements.splice(i,1);
+        }
+
+        /**
+         * Clears all the data from the dictionary
+         */
+        clear(): void {
+            this.elements = [];
         }
 
         //#endregion
